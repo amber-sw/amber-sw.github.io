@@ -10,6 +10,7 @@ import {
   PopoverButton,
   PopoverBackdrop,
   PopoverPanel,
+  Transition 
 } from '@headlessui/react'
 import clsx from 'clsx'
 
@@ -80,7 +81,7 @@ function MoonIcon(props) {
 function MobileNavItem({ href, children }) {
   return (
     <li>
-      <PopoverButton as={Link} href={href} className="block py-2">
+      <PopoverButton as={Link} href={href} className="block py-2 text-md">
         {children}
       </PopoverButton>
     </li>
@@ -96,29 +97,36 @@ function MobileNavigation(props) {
       </PopoverButton>
       <PopoverBackdrop
         transition
-        className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-xs duration-150 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-black/80"
+        className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-xs duration-100 data-closed:opacity-0 data-enter:linear data-leave:linear dark:bg-black/80"
       />
-      <PopoverPanel
-        focus
-        transition
-        className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-closed:scale-95 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:ring-zinc-800"
-      >
-        <div className="flex flex-row-reverse items-center justify-between">
-          <PopoverButton aria-label="Close menu" className="-m-1 p-1">
-            <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
-          </PopoverButton>
-          <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-            Navigation
-          </h2>
-        </div>
-        <nav className="mt-6">
-          <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/about">About</MobileNavItem>
-            <MobileNavItem href="/projects">Projects</MobileNavItem>
-            <MobileNavItem href="/uses">Uses</MobileNavItem>
-          </ul>
-        </nav>
-      </PopoverPanel>
+      <Transition
+        enter="transition ease-in-out duration-300 transform"
+        enterFrom="-translate-y-full"
+        enterTo="translate-y-0"
+        leave="transition ease-in-out duration-300 transform"
+        leaveFrom="translate-y-0"
+        leaveTo="-translate-y-full">
+        <PopoverPanel
+          focus
+          transition
+          className="fixed inset-x-4 top-16 z-50 origin-top rounded-lg bg-white p-8 ring-1 ring-zinc-900/5 duration-300 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:ring-zinc-800">
+          <div className="flex flex-row-reverse items-center justify-between">
+            <PopoverButton aria-label="Close menu" className="-m-1 p-1">
+              <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+            </PopoverButton>
+            <h2 className="text-lg font-bold text-zinc-600 dark:text-zinc-400">
+              Menu
+            </h2>
+          </div>
+          <nav className="mt-6">
+            <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+              <MobileNavItem href="/about">About</MobileNavItem>
+              <MobileNavItem href="/projects">Projects</MobileNavItem>
+              <MobileNavItem href="/uses">Uses</MobileNavItem>
+            </ul>
+          </nav>
+        </PopoverPanel>
+      </Transition>
     </Popover>
   )
 }
