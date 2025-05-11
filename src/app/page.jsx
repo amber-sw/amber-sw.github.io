@@ -98,7 +98,7 @@ function Role({ role }) {
           <time dateTime={startDate}>{startLabel}</time>{' '}
           {endDate &&
             <>
-              <span aria-hidden="true">—</span>
+              <span aria-hidden="true">—</span>{' '}
               <time  dateTime={endDate}>{endLabel}</time>
             </>
           }

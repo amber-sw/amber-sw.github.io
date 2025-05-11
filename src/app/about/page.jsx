@@ -7,7 +7,7 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait-self.jpg'
+import portraitImage from '@/images/profile-picture-transparent.webp'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -44,16 +44,6 @@ export default function About() {
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <div className="lg:pl-20">
-          <div className="max-w-xs px-2.5 lg:max-w-none">
-            <Image
-              src={portraitImage}
-              alt=""
-              sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-            />
-          </div>
-        </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             I’m Amber Swevers
@@ -64,6 +54,13 @@ export default function About() {
               I started my career as a fullstack developer in 2020, working with AngularJS and PHP. Since then, I have had hands-on experience with many different technologies, such as Angular, AngularJS,
               ReactJS and REACT on the frontend, and PHP and Java on the backend.
             </p>
+            <Image
+              src={portraitImage}
+              alt=""
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+              width={250}
+              className="rounded-2xl object-cover float-right shape-outline"
+            />
             <p>
               Over these past few years, I have learned that I love working on user-facing applications. While I have experience with fullstack development, frontend is where my skillset truly shines. 
               I love nothing more than building the bridge between design and functionality.
