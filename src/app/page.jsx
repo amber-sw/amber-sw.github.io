@@ -3,13 +3,10 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  XIcon,
 } from '@/components/SocialIcons'
 import logoPT from '@/images/logos/talent_planet_logo.jpeg'
 import logoOsoc from '@/images/logos/Open_summer_of_code_logo.jpeg'
@@ -20,8 +17,6 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-4.jpg'
-import { formatDate } from '@/lib/formatDate'
-
 
 function BriefcaseIcon(props) {
   return (
@@ -75,8 +70,8 @@ function Role({ role }) {
   let startDate =
     typeof role.start === 'string' ? role.start : role.start.dateTime
   
-    let endLabel;
-    let endDate;
+  let endLabel;
+  let endDate;
   if(role.end){
     endLabel = typeof role.end === 'string' ? role.end : role.end.label
     endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
