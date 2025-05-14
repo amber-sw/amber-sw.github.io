@@ -27,6 +27,15 @@ const projects = [
     logo: logoAnimaginary,
   },
   {
+    name: 'This very website',
+    description:
+      'Personal resume website built with new techologies to learn.',
+      technologies: 'REACT, next.js, TailwindCSS',
+      role: 'Developer',
+    link: { href: 'https://github.com/amber-sw/personal-site', label: 'github.com' },
+    logo: logoOpenShuttle,
+  },
+  {
     name: 'Wie is Wie',
     description:
       'Onboarding webpage.',
@@ -34,13 +43,6 @@ const projects = [
     role: 'Web developer',
     link: null,
     logo: logoHelioStream,
-  },
-  {
-    name: 'Something else',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
   },
 ]
 

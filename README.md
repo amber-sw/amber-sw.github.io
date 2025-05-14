@@ -1,6 +1,4 @@
-# Spotlight
-
-Spotlight is a [Tailwind Plus](https://tailwindcss.com/plus) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+This site is built using a [Tailwind CSS](https://tailwindcss.com) site template and [Next.js](https://nextjs.org).
 
 ## Getting started
 
@@ -23,10 +21,6 @@ npm run dev
 ```
 
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
-
-## Customizing
-
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
 ## License
 
