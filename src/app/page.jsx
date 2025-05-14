@@ -14,7 +14,7 @@ import logoUP from '@/images/logos/up-logo.png'
 import logoDruva from '@/images/logos/druva_logo.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
+import image3 from '@/images/photos/osoc_group.jpeg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-4.jpg'
 
@@ -82,28 +82,54 @@ function Role({ role }) {
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {role.company}
-        </dd>
-        <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
-        </dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-        >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          {endDate &&
-            <>
-              <span aria-hidden="true">—</span>{' '}
-              <time  dateTime={endDate}>{endLabel}</time>
-            </>
-          }
-        </dd>
-      </dl>
+      <div className='w-full'>
+        <dl className="flex justify-between w-full flex-auto flex-wrap gap-x-2">
+          <dt className="sr-only">Company</dt>
+          <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            {role.company}
+          </dd>
+          <dt className="sr-only">Role</dt>
+          <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+            {role.title}
+          </dd>
+          <dt className="sr-only">Date</dt>
+          <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
+            <time dateTime={startDate}>{startLabel}</time>{' '}
+            {endDate &&
+              <>
+                <span aria-hidden="true">—</span>{' '}
+                <time  dateTime={endDate}>{endLabel}</time>
+              </>
+            }
+          </dd>
+        </dl>
+
+
+        <ol className='ml-2 italic'>
+          {role.subRoles?.map((subRole, roleIndex) => (
+            <dl className="flex flex-auto flex-wrap gap-x-2">
+              <dt className="sr-only">Company</dt>
+              <dd className="w-full flex-none text-[12px] font-sm text-zinc-900 dark:text-zinc-100">
+                {subRole.company}
+              </dd>
+              <dt className="sr-only">Role</dt>
+              <dd className="text-[12px] text-zinc-500 dark:text-zinc-400">
+                {subRole.title}
+              </dd>
+              <dt className="sr-only">Date</dt>
+              <dd className="ml-auto text-[12px] text-zinc-400 dark:text-zinc-500">
+                <time dateTime={subRole.start}>{subRole.start}</time>{' '}
+                {subRole.end &&
+                  <>
+                    <span aria-hidden="true">—</span>{' '}
+                    <time  dateTime={subRole.end}>{subRole.end}</time>
+                  </>
+                }
+              </dd>
+            </dl>
+          ))}
+        </ol>
+      </div>
     </li>
   )
 }
@@ -119,6 +145,26 @@ function Resume() {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+      subRoles: [
+        {
+          company: 'Toyota Motor Europe',
+          title: 'Frontend developer, UI/UX designer',
+          start: '2024',
+          end: 'Present'
+        },
+        {
+          company: 'Intern project',
+          title: 'Frontend developer, team lead',
+          start: '2023',
+          end: '2024'
+        },
+        {
+          company: 'Athora',
+          title: 'Full stack developer',
+          start: '2022',
+          end: '2023'
+        },
+      ]
     },
     {
       company: 'Planet Talent',
@@ -126,6 +172,14 @@ function Resume() {
       logo: logoPT,
       start: '2020',
       end: '2022',
+      subRoles: [
+        {
+          company: 'Cebir nv',
+          title: 'Fullstack developer',
+          start: '2020',
+          end: '2022'
+        }
+      ]
     },
     {
       company: 'Druva',
@@ -161,7 +215,6 @@ function Resume() {
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -169,10 +222,7 @@ function Photos() {
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <div
             key={image.src}
-            className={clsx(
-              'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
-            )}
+            className='relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800'
           >
             <Image
               src={image}

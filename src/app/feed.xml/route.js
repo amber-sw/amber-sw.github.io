@@ -1,5 +1,3 @@
-import assert from 'assert'
-import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
 
 export async function GET(req) {
@@ -16,7 +14,7 @@ export async function GET(req) {
 
   let feed = new Feed({
     title: author.name,
-    description: 'Your blog description',
+    description: 'Resume website for Amber Swevers',
     author,
     id: siteUrl,
     link: siteUrl,
