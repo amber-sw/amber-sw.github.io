@@ -2,35 +2,41 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
+import logoAnimaginary from '@/images/logos/ketchup_logo.png'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 
 const projects = [
   {
-    name: 'Animaginary',
+    name: 'dungeon_rs',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      'Map building software for TTRPGs.',
+    technologies: 'Rust',
+    role: 'Developer',
+    link: { href: 'https://github.com/dealloc/dungeon_rs', label: 'github.com' },
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
+    name: 'KetchUP',
+    description:
+      'Intranet application to manage timesheets, read newsletters and access documentation.',
+    technologies: 'REACT, Node.js',
+    role: 'Team lead, frontend developer',
+    link: null,
+    logo: logoAnimaginary,
+  },
+  {
+    name: 'Wie is Wie',
+    description:
+      'Onboarding webpage.',
+    technologies: 'Javascript',
+    role: 'Web developer',
+    link: null,
+    logo: logoHelioStream,
+  },
+  {
+    name: 'Something else',
     description:
       'The schematics for the first rocket I designed that successfully made it to orbit.',
     link: { href: '#', label: 'github.com' },
@@ -51,14 +57,14 @@ function LinkIcon(props) {
 
 export const metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I’ve made that I’m proud of.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Things I’ve made that I’m proud of."
+      intro="I’ve worked on varying projects over the years, here are the ones I feel I truly left my mark on. Many of them are work-related, so unfortunately no repositories can be linked."
     >
       <ul
         role="list"
@@ -75,13 +81,19 @@ export default function Projects() {
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              <Card.Link href={project.link?.href || '#'}>{project.name}</Card.Link>
             </h2>
+
+            <Card.Subtitle>{project.role}</Card.Subtitle>
             <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
+            
+            <Card.Footer>{project.technologies}</Card.Footer>
+            { project.link ? (
+              <p className="relative z-10 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
+            ) : (<></>)}
           </Card>
         ))}
       </ul>

@@ -56,6 +56,22 @@ Card.Description = function CardDescription({ children }) {
   )
 }
 
+Card.Subtitle = function CardSubtitle({ children }) {
+  return (
+    <p className="relative italic z-10 mt-2 text-sm text-zinc-500 dark:text-zinc-500">
+      {children}
+    </p>
+  )
+}
+
+Card.Footer = function CardFooter({ children }) {
+  return (
+    <p className="relative mt-6 inset-x-0 bottom-0 text-xs text-zinc-500 dark:text-zinc-500">
+      {children}
+    </p>
+  )
+}
+
 Card.Cta = function CardCta({ children }) {
   return (
     <div
