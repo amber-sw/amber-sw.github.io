@@ -12,17 +12,15 @@ import logoPT from '@/images/logos/talent_planet_logo.jpeg'
 import logoOsoc from '@/images/logos/Open_summer_of_code_logo.jpeg'
 import logoUP from '@/images/logos/up-logo.png'
 import logoDruva from '@/images/logos/druva_logo.png'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
+import image1 from '@/images/photos/copenhagen.jpg'
+import image2 from '@/images/photos/computerscreen.png'
 import image3 from '@/images/photos/osoc_group.jpeg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-4.jpg'
 
 function BriefcaseIcon(props) {
   return (
     <svg
       viewBox="0 0 24 24"
-      fill="none"
+      fill="white"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -31,11 +29,11 @@ function BriefcaseIcon(props) {
     >
       <path
         d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-zinc-400 dark:fill-white dark:stroke-zinc-900"
       />
       <path
         d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        className="stroke-zinc-400 dark:stroke-zinc-900"
       />
     </svg>
   )
@@ -89,11 +87,11 @@ function Role({ role }) {
             {role.company}
           </dd>
           <dt className="sr-only">Role</dt>
-          <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+          <dd className="text-xs text-zinc-500 dark:text-zinc-300">
             {role.title}
           </dd>
           <dt className="sr-only">Date</dt>
-          <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
+          <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-300">
             <time dateTime={startDate}>{startLabel}</time>{' '}
             {endDate &&
               <>
@@ -107,26 +105,28 @@ function Role({ role }) {
 
         <ol className='ml-2 italic'>
           {role.subRoles?.map((subRole, roleIndex) => (
-            <dl className="flex flex-auto flex-wrap gap-x-2">
-              <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-[12px] font-sm text-zinc-900 dark:text-zinc-100">
-                {subRole.company}
-              </dd>
-              <dt className="sr-only">Role</dt>
-              <dd className="text-[12px] text-zinc-500 dark:text-zinc-400">
-                {subRole.title}
-              </dd>
-              <dt className="sr-only">Date</dt>
-              <dd className="ml-auto text-[12px] text-zinc-400 dark:text-zinc-500">
-                <time dateTime={subRole.start}>{subRole.start}</time>{' '}
-                {subRole.end &&
-                  <>
-                    <span aria-hidden="true">—</span>{' '}
-                    <time  dateTime={subRole.end}>{subRole.end}</time>
-                  </>
-                }
-              </dd>
-            </dl>
+            <li key={roleIndex}>
+              <dl className="flex flex-auto flex-wrap gap-x-2">
+                <dt className="sr-only">Company</dt>
+                <dd className="w-full flex-none text-[12px] font-sm text-zinc-900 dark:text-zinc-100">
+                  {subRole.company}
+                </dd>
+                <dt className="sr-only">Role</dt>
+                <dd className="text-[12px] text-zinc-500 dark:text-zinc-300">
+                  {subRole.title}
+                </dd>
+                <dt className="sr-only">Date</dt>
+                <dd className="ml-auto text-[12px] text-zinc-400 dark:text-zinc-300">
+                  <time dateTime={subRole.start}>{subRole.start}</time>{' '}
+                  {subRole.end &&
+                    <>
+                      <span aria-hidden="true">—</span>{' '}
+                      <time  dateTime={subRole.end}>{subRole.end}</time>
+                    </>
+                  }
+                </dd>
+              </dl>
+            </li>
           ))}
         </ol>
       </div>
@@ -196,7 +196,7 @@ function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 bg-white dark:bg-zinc-600">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Experience</span>
@@ -206,9 +206,9 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="#" variant="primary" className="group mt-6 w-full">
         Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        <ArrowDownIcon className="h-4 w-4 stroke-white transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
   )
@@ -219,7 +219,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {[image1, image2, image3].map((image) => (
           <div
             key={image.src}
             className='relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800'
@@ -265,7 +265,7 @@ export default async function Home() {
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none">
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
           </div>
