@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/ketchup_logo.png'
-import logoCosmos from '@/images/logos/cosmos.svg'
+import logoKetchUP from '@/images/logos/ketchup_logo.png'
+import logoDungeonRS from '@/images/logos/dungeon_rs_logo.png'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 
@@ -15,7 +15,7 @@ const projects = [
     technologies: 'Rust',
     role: 'Developer',
     link: { href: 'https://github.com/dealloc/dungeon_rs', label: 'github.com' },
-    logo: logoCosmos,
+    logo: logoDungeonRS,
   },
   {
     name: 'KetchUP',
@@ -24,7 +24,7 @@ const projects = [
     technologies: 'REACT, Node.js',
     role: 'Team lead, frontend developer',
     link: null,
-    logo: logoAnimaginary,
+    logo: logoKetchUP,
   },
   {
     name: 'This very website',
