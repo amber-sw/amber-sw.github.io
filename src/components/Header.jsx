@@ -15,7 +15,7 @@ import {
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/portrait-self.jpg'
+import avatarImage from '@/images/logos/personalsite_logo.png'
 
 function CloseIcon(props) {
   return (

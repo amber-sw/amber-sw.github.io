@@ -4,8 +4,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoKetchUP from '@/images/logos/ketchup_logo.png'
 import logoDungeonRS from '@/images/logos/dungeon_rs_logo.png'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
+import logoPersonalSite from '@/images/logos/personalsite_logo.png'
 
 const projects = [
   {
@@ -20,7 +19,7 @@ const projects = [
   {
     name: 'KetchUP',
     description:
-      'Intranet application to manage timesheets, read newsletters and access documentation.',
+      'Intranet application to manage timesheets, read newsletters, access documentation and more.',
     technologies: 'REACT, Node.js',
     role: 'Team lead, frontend developer',
     link: null,
@@ -29,21 +28,12 @@ const projects = [
   {
     name: 'This very website',
     description:
-      'Personal resume website built with new techologies to learn.',
+      'Personal resume website built with the goal to learn new techologies.',
       technologies: 'REACT, next.js, TailwindCSS',
       role: 'Developer',
     link: { href: 'https://github.com/amber-sw/personal-site', label: 'github.com' },
-    logo: logoOpenShuttle,
-  },
-  {
-    name: 'Wie is Wie',
-    description:
-      'Onboarding webpage.',
-    technologies: 'Javascript',
-    role: 'Web developer',
-    link: null,
-    logo: logoHelioStream,
-  },
+    logo: logoPersonalSite,
+  }
 ]
 
 function LinkIcon(props) {
@@ -78,7 +68,7 @@ export default function Projects() {
               <Image
                 src={project.logo}
                 alt=""
-                className="h-8 w-8"
+                className="h-8 w-8 rounded-full"
                 unoptimized
               />
             </div>

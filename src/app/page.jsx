@@ -9,7 +9,7 @@ import {
   LinkedInIcon,
 } from '@/components/SocialIcons'
 import logoPT from '@/images/logos/talent_planet_logo.jpeg'
-import logoOsoc from '@/images/logos/Open_summer_of_code_logo.jpeg'
+import logoOsoc from '@/images/logos/open_summer_of_code_logo.jpeg'
 import logoUP from '@/images/logos/up-logo.png'
 import logoDruva from '@/images/logos/druva_logo.png'
 import image1 from '@/images/photos/copenhagen.jpg'
@@ -78,7 +78,7 @@ function Role({ role }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image src={role.logo} alt="" className="h-7 w-7 rounded-full" unoptimized />
       </div>
       <div className='w-full'>
         <dl className="flex justify-between w-full flex-auto flex-wrap gap-x-2">
@@ -242,7 +242,7 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-9">
-        <div className="max-w-2xl">
+        <div className="max-w-full">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
           Frontend developer and UI/UX designer
           </h1>
