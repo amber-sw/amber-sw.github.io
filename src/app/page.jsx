@@ -153,7 +153,7 @@ function Resume() {
           end: 'Present'
         },
         {
-          company: 'Intern project',
+          company: 'Internal project',
           title: 'Frontend developer, team lead',
           start: '2023',
           end: '2024'
@@ -266,7 +266,7 @@ export default async function Home() {
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none">
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
+          <div className="space-y-10">
             <Resume />
           </div>
         </div>
