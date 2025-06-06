@@ -31,7 +31,7 @@ const projects = [
       'Personal resume website built with the goal to learn new techologies.',
       technologies: 'REACT, next.js, TailwindCSS',
       role: 'Developer',
-    link: { href: 'https://github.com/amber-sw/personal-site', label: 'github.com' },
+    link: { href: 'https://github.com/amber-sw/amber-sw.github.io', label: 'github.com' },
     logo: logoPersonalSite,
   }
 ]
@@ -56,7 +56,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       title="Things I’ve made that I’m proud of."
-      intro="I’ve worked on varying projects over the years, here are the ones I feel I truly left my mark on. Many of them are work-related, so unfortunately no repositories can be linked."
+      intro="I’ve worked on varying projects over the years, here are the ones I feel I truly left my mark on. Many of them are work-related, so unfortunately no repositories can be linked. Not to worry, there are more projects in the work! You can always check them out on my GitHub."
     >
       <ul
         role="list"

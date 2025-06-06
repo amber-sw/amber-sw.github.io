@@ -206,7 +206,7 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="primary" className="group mt-6 w-full">
+      <Button href="/SWEVERS_AMBER_CV.pdf" target="_blank" type="application/pdf" variant="primary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-white transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
